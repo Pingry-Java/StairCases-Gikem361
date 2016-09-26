@@ -1,7 +1,11 @@
 /**
- * Write javadoc for your class here (and remove this comment, or course)
- *
+ * This programs asks the user for an input, then prints ascending and descending staircases
+ * based on the input given by the user
+ * @author: Graham Matthews
+ * @version: 0.1
  */
+
+import java.util.Scanner;
 
 public class StairCases
 {
@@ -12,22 +16,42 @@ public class StairCases
 
   public static void main(String[] args)
   {
-    //TODO change the next line so it actually gets input from the user
-    int size = 4;
+  	Scanner keyboard = new Scanner(System.in);
+  	System.out.println("How many steps would you like?");
+    int size = keyboard.nextInt();
+    //int size = 4;
 
     printAscending(size);
+    System.out.println();
     printDescending(size);
   }
 
   /**
-   * Write your javadoc here
+   * This method prints "X"s in an ascending staircase pattern
+   * @param size this is the size of the staircase
    */
-  public static void printAscending
-  //TODO Finish this method
+  public static void printAscending(int size){
+  System.out.println();
+   for (int i=0; i<size; i++){
+    for (int j=0; j<=i; j++){
+     System.out.print("X ");
+    }
+    System.out.println();
+   }
+  }
 
   /**
-   * Write your javadoc here
+   * This method creates a staircase pattern in a descending order with "X"s
+   * @param size this is the size of the descending staircase
    */
-  public static void printDescending
-  //TODO Finish this method
+  public static void printDescending(int size){
+   
+   for(int i=0; i<size; i++){
+    for(int j=i; j<size; j++){
+     System.out.print("X ");
+    }
+    System.out.println();
+   }
+   System.out.println();
+  }
 }
