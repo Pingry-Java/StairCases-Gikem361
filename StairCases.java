@@ -20,38 +20,42 @@ public class StairCases
   	System.out.println("How many steps would you like?");
     int size = keyboard.nextInt();
     //int size = 4;
-
+	System.out.println();
     printAscending(size);
     System.out.println();
     printDescending(size);
+    System.out.println();
   }
 
   /**
    * This method prints "X"s in an ascending staircase pattern
    * @param size this is the size of the staircase
    */
-  public static void printAscending(int size){
-  System.out.println();
+  public static int printAscending(int size){
+  if (size==0){
+  	return 0;
+  }
+     printAscending(size-1);
    for (int i=0; i<size; i++){
-    for (int j=0; j<=i; j++){
-     System.out.print("X ");
+    System.out.print("X ");
     }
-    System.out.println();
-   }
+System.out.println();
+   return size;
   }
 
   /**
    * This method creates a staircase pattern in a descending order with "X"s
    * @param size this is the size of the descending staircase
    */
-  public static void printDescending(int size){
-   
-   for(int i=0; i<size; i++){
-    for(int j=i; j<size; j++){
-     System.out.print("X ");
-    }
-    System.out.println();
+  public static int printDescending(int size){
+   if (size==0){
+   	return 0;
    }
-   System.out.println();
+   for(int i=0; i<size; i++){
+   	System.out.print("X ");
+   	}
+    System.out.println();
+    printDescending(size-1);
+   return size;
   }
 }
